@@ -1,0 +1,13 @@
+MediaPlayer.Desktop/bin
+MediaPlayer.Desktop/obj
+MediaPlayer.Desktop/Properties
+MediaPlayer.Desktop/Resources
+MediaPlayer.Desktop/packages.config
+MediaPlayer.DesktopTests/bin
+MediaPlayer.DesktopTests/obj
+MediaPlayer.DesktopTests/Properties
+MediaPlayer.DesktopTests/Resources
+MediaPlayer.DesktopTests/packages.config
+packages
+MediaPlayer.v12.suo
+
