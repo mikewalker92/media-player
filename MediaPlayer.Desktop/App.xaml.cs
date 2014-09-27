@@ -7,7 +7,7 @@ namespace MediaPlayer.Desktop
     {
         public App()
         {
-            InitializeComponent();
+            // InitializeComponent();
         }
     }
 }

@@ -1,13 +1,35 @@
 ﻿<Controls:MetroWindow x:Class="MediaPlayer.Desktop.Views.HomeView"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
-        Title="HomeView" Height="300" Width="300">
+                      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                      xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+                      Width="1200" Height="900"
+                      Background="Ivory"
+                      WindowStyle="None"
+                      ShowTitleBar="False"
+                      Icon="../media_player_icon.ico"
+                      EnableDWMDropShadow="True">
     <Grid>
         <ContentControl>
-            <StackPanel>
-                <TextBlock>Welcome to my Media Player!</TextBlock>
-            </StackPanel>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="180"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="450"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                    
+                <ContentControl x:Name="TitleViewModel" Grid.Column="0" Grid.Row="0"/>
+                <ContentControl x:Name="SongQueueViewModel" Grid.Column="0" Grid.Row="1"/>
+                <ContentControl x:Name="NowPlayingViewModel" Grid.Column="0" Grid.Row="2"/>
+                <ContentControl x:Name="MediaTabViewModel" Grid.Column="1" Grid.Row="0" Grid.RowSpan="2"/>
+                <ContentControl x:Name="ControllerViewModel"  Grid.Column="1" Grid.Row="2"/>
+            </Grid>
         </ContentControl>
     </Grid>
 </Controls:MetroWindow>
+    
+
+  
