@@ -4,6 +4,7 @@ namespace MediaPlayer.Desktop.ViewModels
     using System.Windows;
     using Caliburn.Micro;
     using MediaPlayer.Desktop.Helpers;
+    using MediaPlayer.Core;
 
     public class HomeViewModel : Screen
     {
@@ -12,6 +13,7 @@ namespace MediaPlayer.Desktop.ViewModels
         private NowPlayingViewModel _nowPlayingViewModel;
         private SongQueueViewModel _songQueueViewModel;
         private TitleViewModel _titleViewModel;
+        private ViewModelFactory viewModelFactory;
 
         #region Properties
 
@@ -69,11 +71,22 @@ namespace MediaPlayer.Desktop.ViewModels
 
         public HomeViewModel(IViewModelFactory viewModelFactory)
         {
+            this.viewModelFactory = (ViewModelFactory)viewModelFactory;
             ControllerViewModel = viewModelFactory.Get<ControllerViewModel>();
             MediaTabViewModel = viewModelFactory.Get<MediaTabViewModel>();
             NowPlayingViewModel = viewModelFactory.Get<NowPlayingViewModel>();
             SongQueueViewModel = viewModelFactory.Get<SongQueueViewModel>();
             TitleViewModel = viewModelFactory.Get<TitleViewModel>();
+
+            Initialize();
+        }
+
+        public void Initialize()
+        {
+            var paradise = new Song();
+            var songViewModel = viewModelFactory.Get<SongViewModel>();
+            songViewModel.Song = paradise;
+            SongQueueViewModel.AddToQueue(songViewModel);
         }
     }
 }

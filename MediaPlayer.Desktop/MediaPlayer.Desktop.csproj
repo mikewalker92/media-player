@@ -110,6 +110,7 @@
     <Compile Include="ViewModels\MediaTabViewModel.cs" />
     <Compile Include="ViewModels\NowPlayingViewModel.cs" />
     <Compile Include="ViewModels\SongQueueViewModel.cs" />
+    <Compile Include="ViewModels\SongViewModel.cs" />
     <Compile Include="ViewModels\TitleViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -161,6 +162,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\SongView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\TitleView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -185,6 +190,12 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MediaPlayer.Core\MediaPlayer.Core.csproj">
+      <Project>{38242b79-c0e1-4d85-b6a1-a9252eeda5e2}</Project>
+      <Name>MediaPlayer.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
