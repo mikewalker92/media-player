@@ -84,9 +84,12 @@ namespace MediaPlayer.Desktop.ViewModels
         public void Initialize()
         {
             var paradise = new Song();
+
             var songViewModel = viewModelFactory.Get<SongViewModel>();
             songViewModel.Song = paradise;
             SongQueueViewModel.AddToQueue(songViewModel);
+
+            ControllerViewModel.Song = paradise;
         }
     }
 }

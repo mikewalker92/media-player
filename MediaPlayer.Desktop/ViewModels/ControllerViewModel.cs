@@ -8,25 +8,25 @@
 
     public class ControllerViewModel : Screen
     {
-        private Song paradise;
+        public Song Song { get; set; }
 
         public ControllerViewModel()
         {
-            paradise = new Song();
+            Song = new Song();
         }
             public void PlayMedia()
             {
-                paradise.Play();
+                Song.Play();
             }
 
             public void PauseMedia()
             {
-                paradise.Pause();
+                Song.Pause();
             }
 
             public void StopMedia()
             {
-                paradise.Stop();
+                Song.Stop();
             }
     }
 }
