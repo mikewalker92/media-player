@@ -1,9 +1,11 @@
-﻿
-namespace MediaPlayer.Core
+﻿namespace MediaPlayer.Core
 {
+    using System;
+    using System.Windows.Media;
+
     public class Song
     {
-        private ISongPlayer songPlayer;
+        private MediaPlayer player;
 
 #region Properties
 
@@ -23,14 +25,25 @@ namespace MediaPlayer.Core
 
         public Song()
         {
-            this.songPlayer = new SongPlayer();
             GetMetadata();
+            player = new MediaPlayer();
+            player.Open(new Uri(FileLocation));
         }
 
         public void Play()
         {
-            songPlayer.Play(FileLocation);
+            player.Play();
             IncrementPlays();
+        }
+
+        public void Pause()
+        {
+            player.Pause();
+        }
+
+        public void Stop()
+        {
+            player.Stop();
         }
 
         private void IncrementPlays()
@@ -43,6 +56,7 @@ namespace MediaPlayer.Core
             Title = "Paradise";
             Artist = "Coldplay";
             Album = "Mylo Xyloto";
+            FileLocation = @"E:\paradise.wav";
         }
     }
 }

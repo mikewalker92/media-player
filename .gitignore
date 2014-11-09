@@ -8,6 +8,13 @@ MediaPlayer.DesktopTests/obj
 MediaPlayer.DesktopTests/Properties
 MediaPlayer.DesktopTests/Resources
 MediaPlayer.DesktopTests/packages.config
+MediaPlayer.Core.Tests/OpenCover
+MediaPlayer.Core.Tests/bin/Debug
+MediaPlayer.Core.Tests/obj/Debug
+MediaPlayer.Core/bin/Debug
+MediaPlayer.Core/obj/Debug
+MediaPlayer.Desktop.Tests/bin/Debug
+MediaPlayer.Desktop.Tests/obj/Debug
 packages
 MediaPlayer.v12.suo
 

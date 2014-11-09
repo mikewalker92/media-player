@@ -8,6 +8,13 @@
              d:DesignHeight="300" d:DesignWidth="300"
              Background="Red">
     <Grid>
-        <Button x:Name="PlayMusic" />
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Button Grid.Column="0" x:Name="PlayMedia">Play</Button>
+        <Button Grid.Column="1" x:Name="PauseMedia">Pause</Button>
+        <Button Grid.Column="2" x:Name="StopMedia">Stop</Button>
     </Grid>
 </UserControl>
