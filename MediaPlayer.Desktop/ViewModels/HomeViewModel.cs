@@ -1,16 +1,15 @@
-﻿
-namespace MediaPlayer.Desktop.ViewModels
+﻿namespace MediaPlayer.ViewModels
 {
     using System.Windows;
     using Caliburn.Micro;
-    using MediaPlayer.Desktop.Helpers;
-    using MediaPlayer.Core;
+    using MediaPlayer.Desktop;
+    using System.Collections.Generic;
+    using MediaPlayer.Helpers;
 
     public class HomeViewModel : Screen
     {
         private ControllerViewModel _controllerViewModel;
-        private MediaTabViewModel _mediaTabViewModel;
-        private NowPlayingViewModel _nowPlayingViewModel;
+        private TrackListViewModel _mediaTabViewModel;
         private SongQueueViewModel _songQueueViewModel;
         private TitleViewModel _titleViewModel;
         private ViewModelFactory viewModelFactory;
@@ -20,30 +19,20 @@ namespace MediaPlayer.Desktop.ViewModels
         public ControllerViewModel ControllerViewModel
         {
             get { return _controllerViewModel; }
-            set 
+            set
             {
                 _controllerViewModel = value;
                 NotifyOfPropertyChange(() => ControllerViewModel);
             }
         }
 
-        public MediaTabViewModel MediaTabViewModel
+        public TrackListViewModel MediaTabViewModel
         {
             get { return _mediaTabViewModel; }
             set
             {
                 _mediaTabViewModel = value;
                 NotifyOfPropertyChange(() => MediaTabViewModel);
-            }
-        }
-
-        public NowPlayingViewModel NowPlayingViewModel
-        {
-            get { return _nowPlayingViewModel; }
-            set
-            {
-                _nowPlayingViewModel = value;
-                NotifyOfPropertyChange(() => NowPlayingViewModel);
             }
         }
 
@@ -73,23 +62,9 @@ namespace MediaPlayer.Desktop.ViewModels
         {
             this.viewModelFactory = (ViewModelFactory)viewModelFactory;
             ControllerViewModel = viewModelFactory.Get<ControllerViewModel>();
-            MediaTabViewModel = viewModelFactory.Get<MediaTabViewModel>();
-            NowPlayingViewModel = viewModelFactory.Get<NowPlayingViewModel>();
+            MediaTabViewModel = viewModelFactory.Get<TrackListViewModel>();
             SongQueueViewModel = viewModelFactory.Get<SongQueueViewModel>();
             TitleViewModel = viewModelFactory.Get<TitleViewModel>();
-
-            Initialize();
-        }
-
-        public void Initialize()
-        {
-            var paradise = new Song();
-
-            var songViewModel = viewModelFactory.Get<SongViewModel>();
-            songViewModel.Song = paradise;
-            SongQueueViewModel.AddToQueue(songViewModel);
-
-            ControllerViewModel.Song = paradise;
         }
     }
 }

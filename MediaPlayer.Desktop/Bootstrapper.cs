@@ -1,12 +1,11 @@
-﻿
-namespace MediaPlayer.Desktop
+﻿namespace MediaPlayer
 {
     using Autofac;
     using Caliburn.Micro;
     using Caliburn.Metro.Autofac;
     using MahApps.Metro;
-    using MediaPlayer.Desktop.ViewModels;
-    using MediaPlayer.Desktop.Helpers;
+    using MediaPlayer.ViewModels;
+    using MediaPlayer.Helpers;
     using System.Globalization;
     using System.Windows;
     using System.Windows.Markup;

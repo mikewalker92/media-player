@@ -1,13 +1,8 @@
-﻿
-namespace MediaPlayer.Desktop.ViewModels
+﻿namespace MediaPlayer.ViewModels
 {
     using Caliburn.Micro;
 
-    public class SongQueueViewModel : Conductor<SongViewModel>.Collection.AllActive
+    public class SongQueueViewModel : Conductor<TrackViewModel>.Collection.AllActive
     {
-        public void AddToQueue(SongViewModel songViewModel)
-        {
-            Items.Add(songViewModel);
-        }
     }
 }

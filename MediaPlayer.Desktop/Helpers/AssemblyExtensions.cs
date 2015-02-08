@@ -1,4 +1,4 @@
-﻿namespace MediaPlayer.Desktop.Helpers
+﻿namespace MediaPlayer.Helpers
 {
     using System.Collections.Generic;
     using System.Reflection;

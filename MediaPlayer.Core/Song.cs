@@ -53,6 +53,7 @@
 
         private void GetMetadata()
         {
+            // TODO This method should actually find the metadata.
             Title = "Paradise";
             Artist = "Coldplay";
             Album = "Mylo Xyloto";

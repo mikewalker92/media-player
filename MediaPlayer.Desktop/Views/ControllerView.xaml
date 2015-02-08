@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="MediaPlayer.Desktop.Views.ControllerView"
+﻿<UserControl x:Class="MediaPlayer.Views.ControllerView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,15 +6,17 @@
              xmlns:cal="http://www.caliburnproject.org"
              mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="300"
-             Background="Red">
+             Background="Blue">
     <Grid>
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="450" />
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
-        <Button Grid.Column="0" x:Name="PlayMedia">Play</Button>
-        <Button Grid.Column="1" x:Name="PauseMedia">Pause</Button>
-        <Button Grid.Column="2" x:Name="StopMedia">Stop</Button>
+        <ContentControl Grid.Row="0" x:Name="SongViewModel" />
+        <Button Grid.Column="1" x:Name="PlayMedia">Play</Button>
+        <Button Grid.Column="2" x:Name="PauseMedia">Pause</Button>
+        <Button Grid.Column="3" x:Name="StopMedia">Stop</Button>
     </Grid>
 </UserControl>

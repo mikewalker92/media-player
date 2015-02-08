@@ -1,8 +1,9 @@
 ﻿namespace MediaPlayer.ViewModels
 {
     using Caliburn.Micro;
+    using MediaPlayer.DataModels;
 
-    public class TitleViewModel : Screen
+    public class TrackViewModel : Screen
     {
     }
 }
