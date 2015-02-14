@@ -21,9 +21,9 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                     
-                <ContentControl x:Name="TitleViewModel" Grid.Column="0" Grid.Row="0"/>
+                <ContentControl x:Name="TitleViewModel" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0"/>
                 <ContentControl x:Name="SongQueueViewModel" Grid.Column="0" Grid.Row="1"/>
-                <ContentControl x:Name="MediaTabViewModel" Grid.Column="1" Grid.Row="0" Grid.RowSpan="2"/>
+                <ContentControl x:Name="MediaTabViewModel" Grid.Column="1" Grid.Row="1" Grid.RowSpan="2"/>
                 <ContentControl x:Name="ControllerViewModel"  Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="2"/>
             </Grid>
         </ContentControl>
