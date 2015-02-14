@@ -8,7 +8,7 @@
     {
         private DataTable _trackData;
 
-        #region Properties
+#region Properties
         public DataTable TrackData
         {
             get

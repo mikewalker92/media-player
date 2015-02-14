@@ -7,7 +7,7 @@
     <ProjectGuid>{B9D80323-1F7C-492C-B891-054F65AF5DBD}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Desktop</RootNamespace>
+    <RootNamespace>MediaPlayer</RootNamespace>
     <AssemblyName>MediaPlayer</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -125,6 +125,7 @@
     <Compile Include="Bootstrapper.cs" />
     <Compile Include="DataModels\Album.cs" />
     <Compile Include="DataModels\Artist.cs" />
+    <Compile Include="DataModels\Playlist.cs" />
     <Compile Include="DataModels\Track.cs" />
     <Compile Include="Helpers\AssemblyExtensions.cs" />
     <Compile Include="Helpers\ViewModelFactory.cs" />

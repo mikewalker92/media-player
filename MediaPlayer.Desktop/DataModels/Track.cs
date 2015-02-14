@@ -15,5 +15,10 @@
         public Artist PrimaryArtist { get; set; }
 
         public List<Artist> Artists { get; set; }
+
+        public Track()
+        {
+            Artists = new List<Artist>();
+        }
     }
 }
