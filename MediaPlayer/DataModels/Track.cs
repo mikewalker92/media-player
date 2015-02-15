@@ -8,13 +8,17 @@
 
     public class Track
     {
-        public String TrackId { get; set; }
+        public string TrackId { get; set; }
 
-        public String Title { get; set; }
+        public string Title { get; set; }
 
         public Artist PrimaryArtist { get; set; }
 
         public List<Artist> Artists { get; set; }
+
+        public Album Album { get; set; }
+
+        public string Image { get; set; }  
 
         public Track()
         {

@@ -34,13 +34,20 @@
         private Playlist CreatePlaylist()
         {
             var playlist = new Playlist();
-            var track = new Track();
-            var sia = new Artist();
-            sia.Name = "Sia";
-            track.Artists.Add(sia);
-            track.Title = "Elastic Heart";
-            track.PrimaryArtist = sia;
-            playlist.Tracks.Add(track);
+            for (var i = 0; i < 20; i++)
+            {
+                var album = new Album();
+                album.Title = "1000 Forms of Fear";
+                var track = new Track();
+                track.Image = "E:/Music/MediaPlayer/AlbumArt/exampleImage.png";
+                track.Album = album;
+                var sia = new Artist();
+                sia.Name = "Sia";
+                track.Artists.Add(sia);
+                track.Title = "Elastic Heart";
+                track.PrimaryArtist = sia;
+                playlist.Tracks.Add(track);
+            }
             return playlist;
         }
     }

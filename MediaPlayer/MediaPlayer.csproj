@@ -128,6 +128,7 @@
     <Compile Include="DataModels\Playlist.cs" />
     <Compile Include="DataModels\Track.cs" />
     <Compile Include="Helpers\AssemblyExtensions.cs" />
+    <Compile Include="Helpers\ImageSourceFactory.cs" />
     <Compile Include="Helpers\ViewModelFactory.cs" />
     <Compile Include="ViewModels\ControllerViewModel.cs" />
     <Compile Include="ViewModels\HomeViewModel.cs" />
@@ -169,7 +170,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="ViewResources\SongQueueResources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ViewResources\TableResources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewResources\TrackViewResources.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

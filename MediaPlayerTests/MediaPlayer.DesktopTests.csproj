@@ -82,7 +82,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MediaPlayer.Desktop\MediaPlayer.Desktop.csproj">
+    <ProjectReference Include="..\MediaPlayer\MediaPlayer.csproj">
       <Project>{b9d80323-1f7c-492c-b891-054f65af5dbd}</Project>
       <Name>MediaPlayer.Desktop</Name>
     </ProjectReference>

@@ -1,0 +1,39 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="Colors.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style x:Key="TrackViewGridStyle" TargetType="Grid">
+        <Setter Property="Background" Value="{StaticResource TrackViewBackgroundBrush}"/>
+    </Style>
+
+    <Style x:Key="TrackViewTitleTextBoxStyle" TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="Segeo UI"/>
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="Foreground" Value="{StaticResource TrackViewTitleTextBrush}"/>
+        <Setter Property="Padding" Value="3"/>
+    </Style>
+
+    <Style x:Key="TrackViewArtistTextBoxStyle" TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="Segeo UI"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="Foreground" Value="{StaticResource TrackViewArtistTextBrush}"/>
+        <Setter Property="Padding" Value="3"/>
+    </Style>
+
+    <Style x:Key="TrackViewAlbumTextBoxStyle" TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="Segeo UI"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="Foreground" Value="{StaticResource TrackViewAlbumTextBrush}"/>
+        <Setter Property="Padding" Value="3"/>
+    </Style>
+
+    <Style x:Key="TrackViewImageStyle" TargetType="Image">
+        <Setter Property="Width" Value="64"/>
+        <Setter Property="Height" Value="64"/>
+        <Setter Property="Margin" Value="5"/>
+    </Style>
+
+</ResourceDictionary>
