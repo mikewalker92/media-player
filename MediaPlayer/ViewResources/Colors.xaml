@@ -13,6 +13,8 @@
 
     <Color x:Key="TextHighlightColor" A="255" R="255" G="230" B="50"/>
 
+    <Color x:Key="TextTitleColor" A="255" R="200" G="30" B="30"/>
+
     <!-- Table Brushes -->
     <SolidColorBrush x:Key="TableColumnHeaderBackgroudBrush" Color="{StaticResource MidGray}"/>
     <SolidColorBrush x:Key="TableColumnHeaderTextBrush" Color="{StaticResource TextHighlightColor}"/>
@@ -28,5 +30,9 @@
     
     <!-- Song Queue Brushes -->
     <SolidColorBrush x:Key="SongQueueBackgroundBrush" Color="{StaticResource NearBlack}"/>
+
+    <!-- Title Brushes -->
+    <SolidColorBrush x:Key="TitleTextBlockTextBrush" Color="{StaticResource TextTitleColor}"/>
+    <SolidColorBrush x:Key="TitleBackgroundBrush" Color="{StaticResource NearBlack}"/>
     
 </ResourceDictionary>
