@@ -10,21 +10,21 @@
     </Style>
 
     <Style x:Key="TrackViewTitleTextBoxStyle" TargetType="TextBlock">
-        <Setter Property="FontFamily" Value="Segeo UI"/>
+        <Setter Property="FontFamily" Value="Segoe UI"/>
         <Setter Property="FontSize" Value="18"/>
         <Setter Property="Foreground" Value="{StaticResource TrackViewTitleTextBrush}"/>
         <Setter Property="Padding" Value="3"/>
     </Style>
 
     <Style x:Key="TrackViewArtistTextBoxStyle" TargetType="TextBlock">
-        <Setter Property="FontFamily" Value="Segeo UI"/>
+        <Setter Property="FontFamily" Value="Segoe UI"/>
         <Setter Property="FontSize" Value="16"/>
         <Setter Property="Foreground" Value="{StaticResource TrackViewArtistTextBrush}"/>
         <Setter Property="Padding" Value="3"/>
     </Style>
 
     <Style x:Key="TrackViewAlbumTextBoxStyle" TargetType="TextBlock">
-        <Setter Property="FontFamily" Value="Segeo UI"/>
+        <Setter Property="FontFamily" Value="Segoe UI"/>
         <Setter Property="FontSize" Value="16"/>
         <Setter Property="Foreground" Value="{StaticResource TrackViewAlbumTextBrush}"/>
         <Setter Property="Padding" Value="3"/>

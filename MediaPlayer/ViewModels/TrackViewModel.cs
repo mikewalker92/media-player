@@ -10,6 +10,8 @@
     {
         private IImageSourceFactory imageSourceFactory;
 
+        public TrackViewModel() { }
+
         public TrackViewModel(IImageSourceFactory imageSourceFactory)
         {
             this.imageSourceFactory = imageSourceFactory;

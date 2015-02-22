@@ -130,12 +130,23 @@
     <Compile Include="Helpers\AssemblyExtensions.cs" />
     <Compile Include="Helpers\ImageSourceFactory.cs" />
     <Compile Include="Helpers\ViewModelFactory.cs" />
+    <Compile Include="Services\MediaController.cs" />
     <Compile Include="ViewModels\ControllerViewModel.cs" />
+    <Compile Include="ViewModels\ControlPanelViewModel.cs" />
     <Compile Include="ViewModels\HomeViewModel.cs" />
+    <Compile Include="ViewModels\NowPlayingDisplayViewModel.cs" />
     <Compile Include="ViewModels\TrackListViewModel.cs" />
     <Compile Include="ViewModels\SongQueueViewModel.cs" />
     <Compile Include="ViewModels\TrackViewModel.cs" />
     <Compile Include="ViewModels\TitleViewModel.cs" />
+    <Page Include="ViewResources\ControlPanelViewResources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewResources\NowPlayingDisplayViewResources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -190,7 +201,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\ControlPanelView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\HomeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\NowPlayingDisplayView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -231,6 +250,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

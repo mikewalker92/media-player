@@ -27,12 +27,24 @@
     <SolidColorBrush x:Key="TrackViewTitleTextBrush" Color="{StaticResource TextHighlightColor}"/>
     <SolidColorBrush x:Key="TrackViewArtistTextBrush" Color="{StaticResource TextColor}"/>
     <SolidColorBrush x:Key="TrackViewAlbumTextBrush" Color="{StaticResource TextColor}"/>
-    
+
+    <!-- NowPlayingDisplay View Brushes -->
+    <SolidColorBrush x:Key="NowPlayingDisplayViewBackgroundBrush" Color="{StaticResource NearBlack}"/>
+    <SolidColorBrush x:Key="NowPlayingDisplayViewTitleTextBrush" Color="{StaticResource TextHighlightColor}"/>
+    <SolidColorBrush x:Key="NowPlayingDisplayViewArtistTextBrush" Color="{StaticResource TextColor}"/>
+    <SolidColorBrush x:Key="NowPlayingDisplayViewAlbumTextBrush" Color="{StaticResource TextColor}"/>
+
     <!-- Song Queue Brushes -->
     <SolidColorBrush x:Key="SongQueueBackgroundBrush" Color="{StaticResource NearBlack}"/>
 
     <!-- Title Brushes -->
     <SolidColorBrush x:Key="TitleTextBlockTextBrush" Color="{StaticResource TextTitleColor}"/>
     <SolidColorBrush x:Key="TitleBackgroundBrush" Color="{StaticResource NearBlack}"/>
+    
+    <!-- Control Panel View Resources -->
+    <SolidColorBrush x:Key="ControlPanelBackgroundBrush" Color="{StaticResource DarkGray}"/>
+    <SolidColorBrush x:Key="ControlPanelButtonBackgroundBrush" Color="{StaticResource LightGray}"/>
+    <SolidColorBrush x:Key="ControlPanelButtonTextBrush" Color="{StaticResource TextColor}"/>
+    <SolidColorBrush x:Key="ControlPanelButtonBorderBrush" Color="{StaticResource DarkGray}"/>
     
 </ResourceDictionary>

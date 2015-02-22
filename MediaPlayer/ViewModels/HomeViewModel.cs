@@ -12,7 +12,7 @@
         private TrackListViewModel _mediaTabViewModel;
         private SongQueueViewModel _songQueueViewModel;
         private TitleViewModel _titleViewModel;
-        private ViewModelFactory viewModelFactory;
+        private IViewModelFactory viewModelFactory;
 
         #region Properties
 
@@ -60,7 +60,7 @@
 
         public HomeViewModel(IViewModelFactory viewModelFactory)
         {
-            this.viewModelFactory = (ViewModelFactory)viewModelFactory;
+            this.viewModelFactory = viewModelFactory;
             ControllerViewModel = viewModelFactory.Get<ControllerViewModel>();
             MediaTabViewModel = viewModelFactory.Get<TrackListViewModel>();
             SongQueueViewModel = viewModelFactory.Get<SongQueueViewModel>();

@@ -18,7 +18,9 @@
 
         public Album Album { get; set; }
 
-        public string Image { get; set; }  
+        public string Image { get; set; }
+
+        public string Uri { get; set; }
 
         public Track()
         {
