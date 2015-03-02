@@ -14,6 +14,7 @@
         void Play();
         void Pause();
         void Stop();
+        string TrackLength();
     }
 
     public class MediaController : IMediaController
@@ -27,22 +28,33 @@
 
         public void setUri(Uri uri) 
         {
-            throw new NotImplementedException();
+            mediaPlayer.Open(uri);
         }
 
         public void Play() 
         {
-            throw new NotImplementedException();
+            mediaPlayer.Play();
         }
 
         public void Pause()
         {
-            throw new NotImplementedException();
+            mediaPlayer.Pause();
         }
 
         public void Stop() 
         {
-            throw new NotImplementedException();
+            mediaPlayer.Stop();
+        }
+
+        public string TrackLength()
+        {
+            if (mediaPlayer.NaturalDuration.HasTimeSpan)
+            {
+                var mins = mediaPlayer.NaturalDuration.TimeSpan.Minutes;
+                var secs = mediaPlayer.NaturalDuration.TimeSpan.Seconds;
+                return String.Format("{0}:{1}", mins, secs);
+            }
+            return "NA";
         }
     }
 }

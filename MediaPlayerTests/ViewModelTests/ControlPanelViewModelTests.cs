@@ -1,6 +1,7 @@
 ﻿namespace MediaPlayerTests.ViewModelTests
 {
     using FakeItEasy;
+    using FluentAssertions;
     using MediaPlayer.DataModels;
     using MediaPlayer.Services;
     using MediaPlayer.ViewModels;
@@ -39,45 +40,36 @@
         }
 
         [Test]
-        public void TrackLoaded_play_playsTrack()
+        public void TrackLoaded_play_playsTrackAndChangesButtonToPause()
         {
             // Given
             var track = new Track { Uri = FILEPATH };
             model.Track = track;
 
             // When
-            model.Play();
+            model.PlayOrPause();
+            var buttonContent = model.PlayPauseButtonContent;
 
             // Then
+            buttonContent.Should().Be("Pause");
             A.CallTo(() => mediaController.Play()).MustHaveHappened();
         }
 
         [Test]
-        public void TrackLoaded_pause_pausesTrack()
+        public void TrackPlaying_pause_pausesTrackAndSetsButtonContentToPlay()
         {
             // Given
             var track = new Track { Uri = FILEPATH };
             model.Track = track;
+            model.PlayOrPause();
 
             // When
-            model.Pause();
+            model.PlayOrPause();
+            var buttonContent = model.PlayPauseButtonContent;
 
             // Then
+            buttonContent.Should().Be("Play");
             A.CallTo(() => mediaController.Pause()).MustHaveHappened();
-        }
-
-        [Test]
-        public void TrackLoaded_stop_stopsTrack()
-        {
-            // Given
-            var track = new Track { Uri = FILEPATH };
-            model.Track = track;
-
-            // When
-            model.Stop();
-
-            // Then
-            A.CallTo(() => mediaController.Stop()).MustHaveHappened();
         }
     }
 }

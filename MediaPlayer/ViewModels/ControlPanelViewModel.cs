@@ -9,11 +9,14 @@
     using System.Linq;
     using System.Text;
     using System.Threading.Tasks;
+    using System.Windows.Controls;
 
     public class ControlPanelViewModel : Screen
     {
         private IMediaController mediaController;
         private Track _track;
+        private string _playPauseButtonContent = "Play";
+        private string _trackLength;
 
         public ControlPanelViewModel(IMediaController mediaController) 
         {
@@ -31,20 +34,63 @@
             set
             {
                 _track = value;
-                mediaController.setUri(new Uri(value.Uri));
+                if (value.Uri != null)
+                {
+                    mediaController.setUri(new Uri(value.Uri));
+                }
+                TrackLength = mediaController.TrackLength();
+            }
+        }
+
+        public String PlayPauseButtonContent
+        {
+            get
+            {
+                return _playPauseButtonContent;
+            }
+            set
+            {
+                if (value == null)
+                {
+                    return;
+                }
+                _playPauseButtonContent = value;
+                NotifyOfPropertyChange(() => PlayPauseButtonContent);
+            }
+        }
+
+        public String TrackLength
+        {
+            get
+            {
+                return _trackLength;
+            }
+            set
+            {
+                if (value == null)
+                {
+                    return;
+                }
+                _trackLength = value;
+                NotifyOfPropertyChange(() => TrackLength);
             }
         }
 
         #endregion
 
-        public void Play()
+        public void PlayOrPause()
         {
-            mediaController.Play();
-        }
-
-        public void Pause()
-        {
-            mediaController.Pause();
+            if (PlayPauseButtonContent == "Play")
+            {
+                mediaController.Play();
+                PlayPauseButtonContent = "Pause";
+            }
+            else if (PlayPauseButtonContent == "Pause")
+            {
+                mediaController.Pause();
+                PlayPauseButtonContent = "Play";
+            }
+            
         }
 
         public void Stop()

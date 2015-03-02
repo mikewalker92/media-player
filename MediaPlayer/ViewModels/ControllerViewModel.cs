@@ -50,6 +50,7 @@
                 }
                 _track = value;
                 NowPlayingDisplayViewModel.Track = value;
+                ControlPanelViewModel.Track = value;
             }
         }
 
@@ -65,11 +66,13 @@
 
         private void setNewTrack()
         {
-            Track = new Track();
-            Track.PrimaryArtist = new Artist { Name = "Sia" };
-            Track.Album = new Album { Title = "1000 Forms of Fear" };
-            Track.Title = "Elastic Heart";
-            Track.Image = "E:/Music/MediaPlayer/AlbumArt/exampleImage.png";
+            Album myloXyloto = new Album { Title = "Mylo Xyloto" };
+            Artist coldplay = new Artist { Name = "Coldplay" };
+            Track = new Track { 
+                PrimaryArtist = coldplay,
+                Album = myloXyloto, Title = "paradise", 
+                Image = "E:/Music/MediaPlayer/AlbumArt/coldplay-paradise.JPG", 
+                Uri = "file://E:/Music/MediaPlayer/Music/paradise.wav" };
         }
     }
 }

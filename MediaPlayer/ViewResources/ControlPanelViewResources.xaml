@@ -21,12 +21,8 @@
         <Setter Property="Content" Value="Previous"/>
     </Style>
 
-    <Style x:Key="PlayButtonStyle" TargetType="Button" BasedOn="{StaticResource ButtonStyle}">
-        <Setter Property="Content" Value="Play/Pause"/>
-    </Style>
-
-    <Style x:Key="StopButtonStyle" TargetType="Button" BasedOn="{StaticResource ButtonStyle}">
-        <Setter Property="Content" Value="Stop"/>
+    <Style x:Key="PlayOrPauseButtonStyle" TargetType="Button" BasedOn="{StaticResource ButtonStyle}">
+        
     </Style>
 
     <Style x:Key="NextButtonStyle" TargetType="Button" BasedOn="{StaticResource ButtonStyle}">
