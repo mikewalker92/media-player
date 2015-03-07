@@ -14,7 +14,8 @@
         void Play();
         void Pause();
         void Stop();
-        string TrackLength();
+        TimeSpan GetTrackLength();
+        void JumpToPosition(int seconds);
     }
 
     public class MediaController : IMediaController
@@ -46,15 +47,18 @@
             mediaPlayer.Stop();
         }
 
-        public string TrackLength()
+        public TimeSpan GetTrackLength()
         {
             if (mediaPlayer.NaturalDuration.HasTimeSpan)
             {
-                var mins = mediaPlayer.NaturalDuration.TimeSpan.Minutes;
-                var secs = mediaPlayer.NaturalDuration.TimeSpan.Seconds;
-                return String.Format("{0}:{1}", mins, secs);
+                return mediaPlayer.NaturalDuration.TimeSpan;
             }
-            return "NA";
+            return new TimeSpan();
+        }
+
+        public void JumpToPosition(int seconds)
+        {
+            mediaPlayer.Position = new TimeSpan(seconds * 10 );
         }
     }
 }

@@ -71,5 +71,19 @@
             buttonContent.Should().Be("Play");
             A.CallTo(() => mediaController.Pause()).MustHaveHappened();
         }
+
+        [Test]
+        public void NewTrackSet_updatesTrackLength()
+        {
+            // Given
+            var track = new Track();
+            A.CallTo(() => mediaController.GetTrackLength()).Returns(new TimeSpan(0, 4, 27));
+
+            // When
+            model.Track = track;
+
+            // Then
+            model.TrackLength.Should().Be("4:27");
+        }
     }
 }

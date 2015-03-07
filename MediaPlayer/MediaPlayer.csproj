@@ -123,12 +123,14 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Bootstrapper.cs" />
+    <Compile Include="CustomControls\DragableSlider.cs" />
     <Compile Include="DataModels\Album.cs" />
     <Compile Include="DataModels\Artist.cs" />
     <Compile Include="DataModels\Playlist.cs" />
     <Compile Include="DataModels\Track.cs" />
     <Compile Include="Helpers\AssemblyExtensions.cs" />
     <Compile Include="Helpers\ImageSourceFactory.cs" />
+    <Compile Include="Helpers\TimeSpanExtensions.cs" />
     <Compile Include="Helpers\ViewModelFactory.cs" />
     <Compile Include="Services\MediaController.cs" />
     <Compile Include="ViewModels\ControllerViewModel.cs" />

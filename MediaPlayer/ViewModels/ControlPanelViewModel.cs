@@ -10,6 +10,7 @@
     using System.Text;
     using System.Threading.Tasks;
     using System.Windows.Controls;
+    using MediaPlayer.Helpers;
 
     public class ControlPanelViewModel : Screen
     {
@@ -17,6 +18,7 @@
         private Track _track;
         private string _playPauseButtonContent = "Play";
         private string _trackLength;
+        private int _trackPosition;
 
         public ControlPanelViewModel(IMediaController mediaController) 
         {
@@ -38,7 +40,7 @@
                 {
                     mediaController.setUri(new Uri(value.Uri));
                 }
-                TrackLength = mediaController.TrackLength();
+                SetTrackLength();
             }
         }
 
@@ -67,12 +69,29 @@
             }
             set
             {
-                if (value == null)
+                if (value == _trackLength)
                 {
                     return;
                 }
                 _trackLength = value;
                 NotifyOfPropertyChange(() => TrackLength);
+            }
+        }
+
+        public int TrackPosition
+        {
+            get
+            {
+                return _trackPosition;
+            }
+            set
+            {
+                if (value == _trackPosition)
+                {
+                    return;
+                }
+                _trackPosition = value;
+                NotifyOfPropertyChange(() => TrackPosition);
             }
         }
 
@@ -96,6 +115,27 @@
         public void Stop()
         {
             mediaController.Stop();
+        }
+
+        public void DragCompleted(double position)
+        {
+            JumpTrackToPosition(position);
+        }
+
+        public void ClickToNewTrackPosition(double position)
+        {
+            JumpTrackToPosition(position);
+        }
+
+        private void JumpTrackToPosition(double position)
+        {
+            mediaController.JumpToPosition((int)position);
+        }
+
+        private void SetTrackLength()
+        {
+            var timeSpan = mediaController.GetTrackLength();
+            TrackLength = timeSpan.ToMinsSecsFormat();
         }
     }
 }

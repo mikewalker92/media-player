@@ -89,6 +89,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Helpers\TimeSpanExtensionsTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModelTests\ControlPanelViewModelTests.cs" />
   </ItemGroup>
