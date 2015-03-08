@@ -31,6 +31,9 @@
     
     <Style x:Key="PositionSliderStyle" TargetType="Slider">
         <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="IsSnapToTickEnabled" Value="True" />
+        <Setter Property="TickFrequency" Value="1" />
+        <Setter Property="Maximum" Value="{Binding TrackSeconds}"/>
     </Style>
 
 </ResourceDictionary>

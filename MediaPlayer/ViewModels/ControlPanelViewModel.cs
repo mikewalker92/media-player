@@ -17,8 +17,8 @@
         private IMediaController mediaController;
         private Track _track;
         private string _playPauseButtonContent = "Play";
-        private string _trackLength;
         private int _trackPosition;
+        private TimeSpan _trackDuration;
 
         public ControlPanelViewModel(IMediaController mediaController) 
         {
@@ -39,7 +39,7 @@
                 if (value.Uri != null)
                 {
                     mediaController.setUri(new Uri(value.Uri));
-                    SetTrackLength();
+                    TrackDuration = mediaController.TrackLength;
                 }
             }
         }
@@ -61,20 +61,38 @@
             }
         }
 
+        public TimeSpan TrackDuration
+        {
+            get
+            {
+                return _trackDuration;
+            }
+            set
+            {
+                if (value == _trackDuration)
+                {
+                    return;
+                }
+                _trackDuration = value;
+                NotifyOfPropertyChange(() => TrackDuration);
+                NotifyOfPropertyChange(() => TrackLength);
+                NotifyOfPropertyChange(() => TrackSeconds);
+            }
+        }
+
         public String TrackLength
         {
             get
             {
-                return _trackLength;
+                return _trackDuration.ToMinsSecsFormat();
             }
-            set
+        }
+
+        public int TrackSeconds
+        {
+            get
             {
-                if (value == _trackLength)
-                {
-                    return;
-                }
-                _trackLength = value;
-                NotifyOfPropertyChange(() => TrackLength);
+                return (int)_trackDuration.TotalSeconds;
             }
         }
 
@@ -130,12 +148,6 @@
         private void JumpTrackToPosition(double position)
         {
             mediaController.JumpToPosition((int)position);
-        }
-
-        private void SetTrackLength()
-        {
-            var timeSpan = mediaController.TrackLength;
-            TrackLength = timeSpan.ToMinsSecsFormat();
         }
     }
 }

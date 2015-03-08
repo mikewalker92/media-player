@@ -33,8 +33,7 @@
         <Button x:Name="PlayOrPause" Grid.Column="2" Grid.Row="1" Content="{Binding PlayPauseButtonContent}" Style="{StaticResource PlayOrPauseButtonStyle}"/>
         <Button x:Name="Next" Grid.Column="3" Grid.Row="1" Style="{StaticResource NextButtonStyle}"/>
 
-        <customControls:DragableSlider x:Name="TrackPositionSlider" Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="0" Style="{StaticResource PositionSliderStyle}"
-                cal:Message.Attach="[Event ValueChanged] = [Action DragCompleted($this)]"/>
+        <customControls:DragableSlider x:Name="TrackPositionSlider" Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="0" Style="{StaticResource PositionSliderStyle}"/>
         <TextBlock x:Name="TrackPositionText" Grid.Column="0" Grid.Row="0" Text="{Binding ElementName=TrackPositionSlider, Path=Value}"/>
         <TextBlock x:Name="TrackLengthText" Grid.Column="4" Grid.Row="0" Text="{Binding TrackLength}"/>
     </Grid>
