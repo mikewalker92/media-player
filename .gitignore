@@ -2,12 +2,10 @@ MediaPlayer/bin
 MediaPlayer/obj
 MediaPlayer/Properties
 MediaPlayer/Resources
-MediaPlayer/packages.config
 MediaPlayerTests/bin
 MediaPlayerTests/obj
 MediaPlayerTests/Properties
 MediaPlayerTests/Resources
-MediaPlayerTests/packages.config
 packages
 MediaPlayer.v12.suo
 
