@@ -33,7 +33,9 @@
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="IsSnapToTickEnabled" Value="True" />
         <Setter Property="TickFrequency" Value="1" />
-        <Setter Property="Maximum" Value="{Binding TrackSeconds}"/>
+        <Setter Property="Maximum" Value="{Binding TrackDurationSeconds}"/>
+        <Setter Property="Value" Value="{Binding TrackPositionSeconds}"/>
+        <Setter Property="IsMoveToPointEnabled" Value="True"/>
     </Style>
 
 </ResourceDictionary>

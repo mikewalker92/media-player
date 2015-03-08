@@ -83,7 +83,22 @@
             model.Track = track;
 
             // Then
-            model.TrackLength.Should().Be("4:27");
+            model.FormattedTrackDuration.Should().Be("4:27");
+        }
+
+        [TestCase(100, "1:40")]
+        [TestCase(10, "0:10")]
+        [TestCase(63, "1:03")]
+        public void FormattedTrackPosition_convertsSecondsToMinsAndSecs(int seconds, string formattedTime)
+        {
+            // Given
+            model.TrackPositionSeconds = seconds;
+
+            // When
+            var result = model.FormattedTrackPosition;
+
+            // Then
+            result.Should().Be(formattedTime);
         }
     }
 }

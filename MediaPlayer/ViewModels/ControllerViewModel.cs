@@ -70,9 +70,9 @@
             Artist coldplay = new Artist { Name = "Coldplay" };
             Track = new Track { 
                 PrimaryArtist = coldplay,
-                Album = myloXyloto, Title = "paradise", 
-                Image = "E:/Music/MediaPlayer/AlbumArt/coldplay-paradise.JPG", 
-                Uri = "file://E:/Music/MediaPlayer/Music/paradise.wav" };
+                Album = myloXyloto, Title = "paradise",
+                Image = "C:/Users/Michael/Music/MediaPlayer/AlbumArt/coldplay-paradise.JPG", 
+                Uri = "file://C:/Users/Michael/Music/MediaPlayer/Music/paradise.wav" };
         }
     }
 }

@@ -75,12 +75,12 @@
                 }
                 _trackDuration = value;
                 NotifyOfPropertyChange(() => TrackDuration);
-                NotifyOfPropertyChange(() => TrackLength);
-                NotifyOfPropertyChange(() => TrackSeconds);
+                NotifyOfPropertyChange(() => FormattedTrackDuration);
+                NotifyOfPropertyChange(() => TrackDurationSeconds);
             }
         }
 
-        public String TrackLength
+        public String FormattedTrackDuration
         {
             get
             {
@@ -88,7 +88,7 @@
             }
         }
 
-        public int TrackSeconds
+        public int TrackDurationSeconds
         {
             get
             {
@@ -96,7 +96,7 @@
             }
         }
 
-        public int TrackPosition
+        public int TrackPositionSeconds
         {
             get
             {
@@ -109,7 +109,16 @@
                     return;
                 }
                 _trackPosition = value;
-                NotifyOfPropertyChange(() => TrackPosition);
+                NotifyOfPropertyChange(() => TrackPositionSeconds);
+                NotifyOfPropertyChange(() => FormattedTrackPosition);
+            }
+        }
+
+        public String FormattedTrackPosition
+        {
+            get
+            {
+                return SecondsToMinsSecsFormat(_trackPosition);
             }
         }
 
@@ -148,6 +157,17 @@
         private void JumpTrackToPosition(double position)
         {
             mediaController.JumpToPosition((int)position);
+        }
+
+        private string SecondsToMinsSecsFormat(int seconds)
+        {
+            var mins = seconds / 60;
+            var secs = seconds % 60;
+            if (secs < 10)
+            {
+                return String.Format("{0}:0{1}", mins, secs);
+            }
+            return String.Format("{0}:{1}", mins, secs);
         }
     }
 }

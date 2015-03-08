@@ -39,7 +39,7 @@
                 var album = new Album();
                 album.Title = "1000 Forms of Fear";
                 var track = new Track();
-                track.Image = "E:/Music/MediaPlayer/AlbumArt/exampleImage.png";
+                track.Image = "C:/Users/Michael/Music/MediaPlayer/AlbumArt/exampleImage.png";
                 track.Album = album;
                 var sia = new Artist();
                 sia.Name = "Sia";
