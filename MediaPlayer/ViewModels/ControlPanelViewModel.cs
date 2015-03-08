@@ -39,8 +39,8 @@
                 if (value.Uri != null)
                 {
                     mediaController.setUri(new Uri(value.Uri));
+                    SetTrackLength();
                 }
-                SetTrackLength();
             }
         }
 
@@ -134,7 +134,7 @@
 
         private void SetTrackLength()
         {
-            var timeSpan = mediaController.GetTrackLength();
+            var timeSpan = mediaController.TrackLength;
             TrackLength = timeSpan.ToMinsSecsFormat();
         }
     }

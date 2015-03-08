@@ -76,8 +76,8 @@
         public void NewTrackSet_updatesTrackLength()
         {
             // Given
-            var track = new Track();
-            A.CallTo(() => mediaController.GetTrackLength()).Returns(new TimeSpan(0, 4, 27));
+            var track = new Track { Uri = "C://path/to/file" };
+            mediaController.TrackLength = new TimeSpan(0, 4, 27);
 
             // When
             model.Track = track;
